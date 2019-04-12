@@ -2,9 +2,6 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from watchdog.observers import Observer
-import time
-from watchdog.events import FileSystemEventHandler
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pr2.settings')
@@ -21,12 +18,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    observer = Observer()
-    observer.schedule(print('cool!'), path = 'C:/Users/Артемий/PycharmProjects/Pr2/Pr2/files/media/csv', recursive=True)
-    observer.start()
-    try:
-        while True:
-            time.sleep(0.1)
-    except KeyboardInterrupt:
-        observer.stop()
-    observer.join()

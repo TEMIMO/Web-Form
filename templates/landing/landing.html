@@ -10,8 +10,8 @@
 <body>
             <h1 class="title">Оставьте ваш email и представьтесь:</h1>
             <div>
-                <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
-                    {{ form.as_p }}
+                   <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+                            {{ form.as_p }}
                     <button type="submit">Отправить</button>
                 </form>
             </div>
