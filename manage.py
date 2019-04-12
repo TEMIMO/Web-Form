@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import threading
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Pr2.settings')
     try:
@@ -15,6 +15,12 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-
+def printit():
+    threading.Timer(10.0, printit).start()
+    if not os.listdir('Pr2/files/media/csv'):
+        print('COOL!')
+    else:
+        print('FUCK!')
+printit()
 if __name__ == '__main__':
     main()
