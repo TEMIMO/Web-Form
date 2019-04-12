@@ -16,7 +16,7 @@ def main():
     execute_from_command_line(sys.argv)
 
 def printit():
-    threading.Timer(10.0, printit).start()
+    threading.Timer(100.0, printit).start()
     if not os.listdir('Pr2/files/media/csv'):
         print('COOL!')
     else:
