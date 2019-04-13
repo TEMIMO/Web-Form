@@ -123,7 +123,7 @@ _PATH = os.path.abspath(os.path.dirname(__file__))
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(_PATH, "static",)]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static",)]
 STATIC_ROOT = os.path.join(_PATH, 'files', 'static')
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
@@ -132,4 +132,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
-ADMIN_MEDIA_PREFIX = '/static/admin'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'artemymif@gmail.com'
+EMAIL_HOST_PASSWORD = 'ca9cf7eb'
